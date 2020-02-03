@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,23 @@
     <title>My Musical Evolution</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>My Evolution</h1>
-    <div class="items-list"></div>
-    
+
+    <h1>My Time Machine</h1>
+    <hr>
+
+    <select id="ddselect" onclick="ddselect()">
+        <option selected disabled value="default">--Select Year--</option>
+    </select>
+
+    <div class="show-clips"></div>
+
+
+    <script src="js/dialog.js"></script>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
+
 </body>
+
 </html>
