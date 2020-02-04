@@ -1,18 +1,24 @@
-init();
+var slider = document.getElementById("myRange");
+var output = document.getElementById("value");
 
-function init() {
-    render()
+output.innerHTML = slider.value;
+
+slider.oninput = function () {
+    output.innerHTML = this.value;
 }
 
-function render() {
-    // getting years into drop down select element. 
-    var selectedYear = document.getElementById("ddselect");
-    var yearsArray = Object.keys(myEvo);
-    yearsArray.forEach(element => {
-        var option = document.createElement("OPTION"),
-            txt = document.createTextNode(element);
-        option.appendChild(txt);
-        option.setAttribute("value", element)
-        selectedYear.insertBefore(option, selectedYear.lastChild);
+
+slider.addEventListener("input", function () {
+
+    let allClipsEmbed = '';
+    let year = this.value;
+    const clipsArray = Object.keys(myEvo[year]);// makes array of chosen year's clips index
+
+    clipsArray.forEach(function (clip) { // Embed each clip 
+        let clipURL = myEvo[year][clip].url
+        allClipsEmbed += `${clipURL}`;
+        document.querySelector(".show-clips").innerHTML = allClipsEmbed;
     });
-};
+
+
+});

@@ -14,9 +14,12 @@
     <h1>My Time Machine</h1>
     <hr>
 
-    <select id="ddselect" onclick="ddselect()">
-        <option selected disabled value="default">--Select Year--</option>
-    </select>
+
+
+    <div class="slideContainer">
+        <input type="range" min="2007" max="2019"  id="myRange" class="slider" >
+        <p>year: <span id="value"></span></p>
+    </div>
 
     <div class="show-clips"></div>
 
